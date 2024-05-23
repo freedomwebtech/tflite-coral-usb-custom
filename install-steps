@@ -23,8 +23,10 @@ exec "$SHELL"
 1)python3 -m venv .venv
 source .venv/bin/activate
 
-2)pip install edge-tpu-silva
+2)echo "deb https://packages.cloud.google.com/apt coral-edgetpu-stable main" | sudo tee /etc/apt/sources.list.d/coral-edgetpu.list
 
-3)silvatpu-linux-setup
+3)curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 
+4)sudo apt-get update
+5)sudo apt-get install libedgetpu1-std
 ############################################################AFTER ALL THIS PROCESS  COMPLETED JUST REBOOT YOUR RASPBERRY PI 4##########################################################################
